@@ -11,6 +11,7 @@
     <File Path="NuGet.config" />
     <File Path="README.md" />
     <File Path="LICENSE" />
+    <File Path="THIRD-PARTY-NOTICES.md" />
   </Folder>
   <Folder Name="/Tests/">
     <Project Path="Tests/Debt.ConsoleClient.Tests/Debt.ConsoleClient.Tests.csproj" />
