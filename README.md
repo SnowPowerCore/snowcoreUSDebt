@@ -141,6 +141,16 @@ dotnet run --project Debt.ConsoleClient
 dotnet test snowcoreUSDebt.slnx
 ```
 
+## AI Documentation
+
+AI analysis and behavior assets are documented in:
+
+- `.ai/README.md`
+- `.ai/spec.md`
+- `.ai/prompts/system.md`
+- `.ai/tools/mcp-tools.md`
+- `.ai/evals/test-cases.md`
+
 ## Behavioral Requirements (Reference)
 
 Expected chat behaviors for this project:
