@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PublishAot>true</PublishAot>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GitHub.Copilot.SDK" />
+    <PackageReference Include="kli.Localize" />
+    <PackageReference Include="ModelContextProtocol" />
+    <PackageReference Include="Fody">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="ConfigureAwait.Fody">
+      <TreatAsUsed>true</TreatAsUsed>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="**/FodyWeavers.*" Visible="false" />
+    <ContentWithTargetPath Include="Config\**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Config\%(RecursiveDir)\%(Filename)%(Extension)</TargetPath>
+    </ContentWithTargetPath>
+    <ContentWithTargetPath Include="Resources\**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Resources\%(RecursiveDir)\%(Filename)%(Extension)</TargetPath>
+    </ContentWithTargetPath>
+    <Localize Include="Resources\Resource_*.json" NamespaceName="Debt.ConsoleClient.Resources" ClassName="Resource" NeutralCulture="en" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Config\*.json" />
+    <EmbeddedResource Include="appsettings.json" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\Debt.Universal\PublicApi\Debt.PublicApi.csproj" />
+    <ProjectReference Include="..\Debt.Universal\ServiceDefaults\Debt.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\Debt.Universal\UniversalModules\ApplicationLaunch.Implementations\Debt.ApplicationLaunch.Implementations.csproj" />
+    <ProjectReference Include="..\Debt.Universal\UniversalModules\ConsoleHandling.Implementations\Debt.ConsoleHandling.Implementations.csproj" />
+    <ProjectReference Include="..\Debt.Universal\UniversalModules\LocalStorage.Implementations\Debt.LocalStorage.Implementations.csproj" />
+    <ProjectReference Include="..\Debt.Universal\UniversalModules\TelemetryHandling.Implementations\Debt.TelemetryHandling.Implementations.csproj" />
+    <ProjectReference Include="..\Debt.Universal\UniversalModules\VersionTracking.Implementations\Debt.VersionTracking.Implementations.csproj" />
+  </ItemGroup>
+
+</Project>

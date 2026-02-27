@@ -1,0 +1,74 @@
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+
+  <ItemGroup>
+      <!-- Apizr Packages -->
+      <PackageVersion Include="Apizr" Version="6.4.2" />
+      <PackageVersion Include="Apizr.Extensions.Microsoft.DependencyInjection" Version="6.4.2" />
+      <PackageVersion Include="Apizr.Integrations.FileTransfer.MediatR" Version="6.4.2" />
+      <PackageVersion Include="Apizr.Integrations.Fusillade" Version="6.4.2" />
+      <PackageVersion Include="Apizr.Integrations.MediatR" Version="6.4.2" />
+
+      <!-- Microsoft Extensions Packages -->
+      <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="10.0.0" />
+      <PackageVersion Include="Microsoft.Extensions.FileProviders.Embedded" Version="10.0.0" />
+      <PackageVersion Include="Microsoft.Extensions.Hosting" Version="10.0.0" />
+      <PackageVersion Include="Microsoft.Extensions.Http.Polly" Version="10.0.0" />
+      <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="10.0.0" />
+      <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery" Version="10.0.0" />
+      <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery.Yarp" Version="10.0.0" />
+
+      <!-- Microsoft CodeAnalysis Packages -->
+      <PackageVersion Include="Microsoft.CodeAnalysis.Common" Version="5.0.0" />
+      <PackageVersion Include="Microsoft.CodeAnalysis.CSharp" Version="5.0.0" />
+  
+      <!-- Open Telemetry Packages -->
+      <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.14.0" />
+      <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="1.14.0" />
+      <PackageVersion Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.14.0" />
+      <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="1.14.0" />
+      <PackageVersion Include="OpenTelemetry.Instrumentation.Runtime" Version="1.14.0" />
+
+      <!-- Github Copilot SDK -->
+      <PackageVersion Include="GitHub.Copilot.SDK" Version="0.1.26" />
+
+      <!-- Polly -->
+      <PackageVersion Include="Polly" Version="8.6.4" />
+      
+      <!-- Model Context Protocol -->
+      <PackageVersion Include="ModelContextProtocol" Version="1.0.0" />
+      <PackageVersion Include="ModelContextProtocol.AspNetCore" Version="1.0.0" />
+	  
+	    <!-- Fody Packages -->
+	    <PackageVersion Include="ConfigureAwait.Fody" Version="3.3.2" />
+	    <PackageVersion Include="Fody" Version="6.9.3" />
+
+      <!-- FluentValidation -->
+      <PackageVersion Include="FluentValidation" Version="12.1.0" />
+
+      <!-- FastEndpoints Packages -->
+      <PackageVersion Include="FastEndpoints" Version="7.1.1" />
+      <PackageVersion Include="FastEndpoints.Generator" Version="7.1.1" />
+      <PackageVersion Include="FastEndpoints.OpenTelemetry" Version="2.3.0" />
+      <PackageVersion Include="FastEndpoints.Security" Version="7.1.1" />
+      <PackageVersion Include="FastEndpoints.Swagger" Version="7.1.1" />
+
+      <!-- MinimalStepified Packages -->
+      <PackageVersion Include="MinimalStepifiedSystem.Core" Version="1.2.2.0" />
+      <PackageVersion Include="MinimalStepifiedSystem.SourceGen" Version="1.2.2.0" />
+
+      <!-- Utilities -->
+      <PackageVersion Include="kli.Localize" Version="2.0.4" />
+      <PackageVersion Include="LocalStorage" Version="2.1.0" />
+      <PackageVersion Include="Newtonsoft.Json" Version="13.0.4" />
+      <PackageVersion Include="WTorricos.Results" Version="2.0.4" />
+
+      <!-- Application Insights -->
+      <PackageVersion Include="Microsoft.ApplicationInsights" Version="2.23.0" />
+
+      <!-- Aspire Community Toolkit -->
+      <PackageVersion Include="CommunityToolkit.Aspire.Hosting.McpInspector" Version="13.1.1" />
+  </ItemGroup>
+</Project>

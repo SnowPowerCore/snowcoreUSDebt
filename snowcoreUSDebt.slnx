@@ -1,0 +1,17 @@
+<Solution>
+  <Folder Name="/Universal Modules/">
+    <Project Path="Debt.Universal/UniversalModules/ApplicationLaunch.Implementations/Debt.ApplicationLaunch.Implementations.csproj" />
+    <Project Path="Debt.Universal/UniversalModules/ConsoleHandling.Implementations/Debt.ConsoleHandling.Implementations.csproj" />
+    <Project Path="Debt.Universal/UniversalModules/LocalStorage.Implementations/Debt.LocalStorage.Implementations.csproj" />
+    <Project Path="Debt.Universal/UniversalModules/TelemetryHandling.Implementations/Debt.TelemetryHandling.Implementations.csproj" />
+    <Project Path="Debt.Universal/UniversalModules/VersionTracking.Implementations/Debt.VersionTracking.Implementations.csproj" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path="Directory.Packages.props" />
+  </Folder>
+  <Project Path="Debt.Aspire/Debt.Aspire.csproj" />
+  <Project Path="Debt.ConsoleClient/Debt.ConsoleClient.csproj" />
+  <Project Path="Debt.MCPServer/Debt.MCPServer.csproj" />
+  <Project Path="Debt.Universal/PublicApi/Debt.PublicApi.csproj" />
+  <Project Path="Debt.Universal/ServiceDefaults/Debt.ServiceDefaults.csproj" />
+</Solution>

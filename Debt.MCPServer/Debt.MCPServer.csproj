@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <PublishAot>true</PublishAot>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Apizr" />
+    <PackageReference Include="Apizr.Extensions.Microsoft.DependencyInjection" />
+    <PackageReference Include="Apizr.Integrations.Fusillade" />
+    <PackageReference Include="ModelContextProtocol.AspNetCore" />
+    <PackageReference Include="Fody">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="ConfigureAwait.Fody">
+      <TreatAsUsed>true</TreatAsUsed>
+    </PackageReference>
+    <PackageReference Include="kli.Localize" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="**/FodyWeavers.*" Visible="false" />
+    <Localize Include="Resources\Resource_*.json" NamespaceName="Debt.MCPServer.Resources" ClassName="Resource" NeutralCulture="en" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Debt.Universal\PublicApi\Debt.PublicApi.csproj" />
+    <ProjectReference Include="..\Debt.Universal\ServiceDefaults\Debt.ServiceDefaults.csproj" />
+  </ItemGroup>
+
+</Project>

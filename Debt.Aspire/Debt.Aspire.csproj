@@ -1,0 +1,21 @@
+<Project Sdk="Aspire.AppHost.Sdk/13.1.1">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>be070406-5dbd-4945-b03a-121f319eef33</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Aspire.Hosting.McpInspector" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Debt.ConsoleClient\Debt.ConsoleClient.csproj" />
+    <ProjectReference Include="..\Debt.MCPServer\Debt.MCPServer.csproj" />
+    <ProjectReference Include="..\Debt.Universal\PublicApi\Debt.PublicApi.csproj" IsAspireProjectResource="false" />
+  </ItemGroup>
+
+</Project>
