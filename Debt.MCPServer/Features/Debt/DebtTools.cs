@@ -11,7 +11,7 @@ public class DebtTools(IDebtService debt)
     private const string PageNumberArgDescription = "Optional page number";
 
     [McpServerTool(Name = GetUsDebtToolName), Description(GetUsDebtToolDescription)]
-    public async Task<string> InvokeAsync(
+    public async Task<string> GetUsDebtToolAsync(
         [Description(FilterArgDescription)] string filter = "",
         [Description(SortArgDescription)] string sort = "",
         [Description(PageSizeArgDescription)] int? pageSize = null,

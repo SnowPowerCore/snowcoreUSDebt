@@ -51,6 +51,22 @@ public class McpServerToolsInteractionTests
         Assert.Equal(Resources.Resource.GetUsDebtError, ExtractText(result));
     }
 
+    [Fact]
+    public async Task CallToolAsync_GetCurrentDate_ReturnsStubbedUtcDateInExpectedFormat()
+    {
+        var fixedDate = new DateTimeOffset(2030, 1, 2, 14, 35, 0, TimeSpan.Zero);
+
+        using var factory = new McpServerWebApplicationFactory(() => new StubDateTimeService(Maybe.Create(fixedDate)));
+        await using var mcpClient = await CreateClientAsync(factory);
+
+        var result = await mcpClient.CallToolAsync(
+            "get_current_date",
+            new Dictionary<string, object?>(),
+            cancellationToken: CancellationToken.None);
+
+        Assert.Equal("2030-01-02", ExtractText(result));
+    }
+
     private static async Task<McpClient> CreateClientAsync(WebApplicationFactory<Program> factory)
     {
         var httpClient = factory.CreateClient(new WebApplicationFactoryClientOptions
@@ -76,5 +92,10 @@ public class McpServerToolsInteractionTests
     private sealed class StubDebtService(IMaybe<string> result) : IDebtService
     {
         public Task<IMaybe<string>> GetUsDebtAsync(GetUsDebtArgs? args = null) => Task.FromResult(result);
+    }
+
+    private sealed class StubDateTimeService(IMaybe<DateTimeOffset> result) : IDateTimeService
+    {
+        public Task<IMaybe<DateTimeOffset>> GetCurrentDateTimeAsync() => Task.FromResult(result);
     }
 }

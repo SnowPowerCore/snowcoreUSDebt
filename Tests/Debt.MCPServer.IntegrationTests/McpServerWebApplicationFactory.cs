@@ -10,6 +10,7 @@ namespace Debt.MCPServer.IntegrationTests;
 public class McpServerWebApplicationFactory : WebApplicationFactory<Program>
 {
     private readonly Func<IDebtService>? _debtServiceFactory;
+    private readonly Func<IDateTimeService>? _dateTimeServiceFactory;
 
     public McpServerWebApplicationFactory() { }
 
@@ -18,17 +19,31 @@ public class McpServerWebApplicationFactory : WebApplicationFactory<Program>
         _debtServiceFactory = debtServiceFactory;
     }
 
+    internal McpServerWebApplicationFactory(Func<IDateTimeService> dateTimeServiceFactory)
+    {
+        _dateTimeServiceFactory = dateTimeServiceFactory;
+    }
+
     protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
         builder.UseEnvironment("Development");
 
-        if (_debtServiceFactory is null)
+        if (_debtServiceFactory is null && _dateTimeServiceFactory is null)
             return;
 
         builder.ConfigureTestServices(services =>
         {
-            services.RemoveAll<IDebtService>();
-            services.AddScoped(_ => _debtServiceFactory());
+            if (_debtServiceFactory is not null)
+            {
+                services.RemoveAll<IDebtService>();
+                services.AddScoped(_ => _debtServiceFactory());
+            }
+
+            if (_dateTimeServiceFactory is not null)
+            {
+                services.RemoveAll<IDateTimeService>();
+                services.AddScoped(_ => _dateTimeServiceFactory());
+            }
         });
     }
 }

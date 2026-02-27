@@ -26,7 +26,7 @@ public class DebtToolsTests
             .Callback<GetUsDebtArgs?>(args => capturedArgs = args)
             .ReturnsAsync(Maybe.Create("{\"debt\":\"ok\"}"));
 
-        var result = await _sut.InvokeAsync("record_date:gte:2026-01-01", "-record_date", 5, 2);
+        var result = await _sut.GetUsDebtToolAsync("record_date:gte:2026-01-01", "-record_date", 5, 2);
 
         Assert.Equal("{\"debt\":\"ok\"}", result);
         Assert.NotNull(capturedArgs);
@@ -44,7 +44,7 @@ public class DebtToolsTests
             .Setup(s => s.GetUsDebtAsync(It.IsAny<GetUsDebtArgs?>()))
             .ReturnsAsync((IMaybe<string>)null!);
 
-        var result = await _sut.InvokeAsync();
+        var result = await _sut.GetUsDebtToolAsync();
 
         Assert.Equal(Resources.Resource.GetUsDebtError, result);
         _service.Verify(s => s.GetUsDebtAsync(It.IsAny<GetUsDebtArgs?>()), Times.Once);
