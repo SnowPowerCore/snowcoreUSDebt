@@ -48,6 +48,7 @@ public class ScreenBase : IConsoleScreen
 
     protected async Task ReturnToWaitForCommandInputAsync()
     {
+        Application.Infrastructure.Console.PrintLine();
         Application.Infrastructure.Console.PrintLine(Resource.InputIsOpenMessage);
         string? input;
         do
