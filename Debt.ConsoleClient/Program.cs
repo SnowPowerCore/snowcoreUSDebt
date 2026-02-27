@@ -29,7 +29,8 @@ builder.Services
     .AddVersioningServices()
     .AddApplicationLaunchServices()
     .AddScreens()
-    .AddInfrastructureServices();
+    .AddInfrastructureServices()
+    .AddLlmClient();
 
 builder.Services.AddHttpClient(ProjectConstants.Projects_Debt_MCPServer,
     static client => client.BaseAddress = new($"{Uri.UriSchemeHttps}://{ProjectConstants.Projects_Debt_MCPServer}"));

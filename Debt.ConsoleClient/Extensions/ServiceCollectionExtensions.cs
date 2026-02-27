@@ -76,7 +76,6 @@ internal static class ServiceCollectionExtensions
     public static IServiceCollection AddScreens(this IServiceCollection services)
     {
         services.AddSingleton(static sp => new ScreenBase(sp.GetRequiredService<IConsoleApplicationService>()));
-        services.AddSingleton<ILlmClient, CopilotLlmClient>();
         services.AddSingleton(static sp => new ChatScreen(sp.GetRequiredService<IConsoleApplicationService>(),
             sp.GetRequiredService<IHttpClientFactory>(),
             sp.GetRequiredService<ILlmClient>()));
@@ -90,6 +89,13 @@ internal static class ServiceCollectionExtensions
         services.AddHostedService(static sp =>
             new ApplicationLaunchWorker(sp.GetRequiredService<IHostApplicationLifetime>(),
                 sp.GetRequiredService<IApplicationLaunchService>()));
+
+        return services;
+    }
+
+    public static IServiceCollection AddLlmClient(this IServiceCollection services)
+    {
+        services.AddSingleton<ILlmClient>(static sp => new CopilotLlmClient(sp.GetRequiredService<IOptions<LlmSessionOptions>>()));
 
         return services;
     }
