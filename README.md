@@ -48,8 +48,8 @@ Current MCP tools exposed by `Debt.MCPServer`:
 
 - Windows, macOS, or Linux with terminal access
 - .NET SDK 10.0 (projects target `net10.0`)
+- .NET Aspire workload/tools for AppHost workflows (there's an option to launch projects individually, which doesn't require .NET Aspire-related setup)
 - Internet access to call Treasury Fiscal Data API
-- (Optional) .NET Aspire workload/tools for AppHost workflows
 
 ## Install Workloads & Tooling
 
@@ -90,7 +90,7 @@ dotnet dev-certs https --trust
 
 ## Tested Environment
 
-The repository is currently being worked on in:
+The repository was established on the following environment:
 
 - OS: Windows
 - Runtime target: `net10.0`
