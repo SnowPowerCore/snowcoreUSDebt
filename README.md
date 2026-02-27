@@ -153,6 +153,12 @@ AI analysis and behavior assets are documented in:
 - `.ai/tools/mcp-tools.md`
 - `.ai/evals/test-cases.md`
 
+## Third-Party Notices
+
+Dependency license/copyright information is documented in:
+
+- `THIRD-PARTY-NOTICES.md`
+
 ## Behavioral Requirements (Reference)
 
 Expected chat behaviors for this project:
