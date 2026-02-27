@@ -9,6 +9,10 @@
   <Folder Name="/Solution Items/">
     <File Path="Directory.Packages.props" />
   </Folder>
+  <Folder Name="/Tests/">
+    <Project Path="Tests/Debt.ConsoleClient.Tests/Debt.ConsoleClient.Tests.csproj" />
+    <Project Path="Tests/Debt.MCPServer.Tests/Debt.MCPServer.Tests.csproj" />
+  </Folder>
   <Project Path="Debt.Aspire/Debt.Aspire.csproj" />
   <Project Path="Debt.ConsoleClient/Debt.ConsoleClient.csproj" />
   <Project Path="Debt.MCPServer/Debt.MCPServer.csproj" />
