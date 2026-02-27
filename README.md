@@ -48,6 +48,7 @@ Current MCP tools exposed by `Debt.MCPServer`:
 
 - Windows, macOS, or Linux with terminal access
 - .NET SDK 10.0 (projects target `net10.0`)
+- Docker or Podman (required for container-based Aspire dependencies)
 - .NET Aspire workload/tools for AppHost workflows (there's an option to launch projects individually, which doesn't require .NET Aspire-related setup)
 - Internet access to call Treasury Fiscal Data API
 
@@ -94,6 +95,7 @@ The repository was established on the following environment:
 
 - OS: Windows
 - Runtime target: `net10.0`
+- Container runtime used during development: Podman `1.23.1`
 
 If you test on another environment, please update this section with your validated setup.
 
