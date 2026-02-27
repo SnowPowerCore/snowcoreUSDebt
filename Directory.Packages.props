@@ -77,5 +77,6 @@
       <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.4" />
       <PackageVersion Include="coverlet.collector" Version="6.0.4" />
       <PackageVersion Include="Moq" Version="4.20.72" />
+      <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="10.0.0" />
   </ItemGroup>
 </Project>
