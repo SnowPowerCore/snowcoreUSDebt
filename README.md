@@ -153,11 +153,22 @@ AI analysis and behavior assets are documented in:
 - `.ai/tools/mcp-tools.md`
 - `.ai/evals/test-cases.md`
 
-## Third-Party Notices
+## LLM in Console Client
 
-Dependency license/copyright information is documented in:
+`Debt.ConsoleClient` uses an LLM through an abstraction layer so the provider can be replaced without changing chat screen logic.
 
-- `THIRD-PARTY-NOTICES.md`
+- LLM abstraction contracts:
+  - `ILlmClient` (client lifecycle + session creation)
+  - `ILlmSession` (send prompt + receive session events)
+- Current implementation:
+  - `CopilotLlmClient` (GitHub Copilot SDK)
+  - Model currently configured: `gpt-5-mini`
+- Tool usage:
+  - MCP tools discovered from `Debt.MCPServer` are attached to the LLM session and used for debt/date retrieval.
+- Auth/config:
+  - GitHub token is read from environment variable `GH_TOKEN`.
+
+This design keeps the app flexible for future model/provider changes while preserving the same chat workflow.
 
 ## Behavioral Requirements (Reference)
 
@@ -168,6 +179,12 @@ Expected chat behaviors for this project:
 - Maintains memory only for the current process/session (RAM only; no persistence).
 - Returns explicit messages when data is unavailable or outside supported period.
 - Avoids speculation and filler; answers should remain concise and factual.
+
+## Third-Party Notices
+
+Dependency license/copyright information is documented in:
+
+- `THIRD-PARTY-NOTICES.md`
 
 ## Example Prompts to Try
 
