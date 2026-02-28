@@ -49,6 +49,8 @@ Current MCP tools exposed by `Debt.MCPServer`:
 - Windows, macOS, or Linux with terminal access
 - .NET SDK 10 (projects target `net10.0`)
 - Docker or Podman (required for container-based Aspire dependencies)
+- GitHub Copilot CLI installed and authenticated
+- GitHub Copilot Pro subscription if usage limits are hit (sufficient for `gpt-5-mini` with active subscription)
 - .NET Aspire workload/tools for AppHost workflows (there's an option to launch projects individually, which doesn't require .NET Aspire-related setup)
 - Internet access to call Treasury Fiscal Data API
 
@@ -167,6 +169,8 @@ AI analysis and behavior assets are documented in:
   - MCP tools discovered from `Debt.MCPServer` are attached to the LLM session and used for debt/date retrieval.
 - Auth/config:
   - GitHub token is read from environment variable `GH_TOKEN`.
+  - GitHub Copilot CLI must be available and signed in.
+  - If account usage limits are reached, use a GitHub Copilot Pro subscription; for this project, `gpt-5-mini` is expected to work with an active subscription without consuming usage limits.
 
 This design keeps the app flexible for future model/provider changes while preserving the same chat workflow.
 
