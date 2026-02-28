@@ -56,6 +56,16 @@ At runtime, the AppHost:
 
 This ensures the console app has its MCP dependency available before interaction begins.
 
+## Service Discovery
+
+This solution uses .NET Aspire service discovery for internal endpoints.
+
+- No direct internal URL (host/port) is hardcoded between `Debt.ConsoleClient` and `Debt.MCPServer`.
+- Services are addressed by resource/service name, and real runtime URLs are resolved automatically by Aspire.
+- This keeps environment changes (ports/hosts) out of application code.
+
+Note: this applies to internal service communication. External third-party API endpoints remain explicitly configured where needed.
+
 ## Configuration Notes
 
 - Launch profile name: `https`

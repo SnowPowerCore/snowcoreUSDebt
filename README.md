@@ -139,6 +139,16 @@ Then start console client in a second terminal:
 dotnet run --project Debt.ConsoleClient
 ```
 
+## Service Discovery (.NET Aspire)
+
+Internal service-to-service communication uses Aspire service discovery instead of hardcoded host/port URLs.
+
+- `Debt.ConsoleClient` references the MCP server by service name (`debt-mcp-server`), not by direct localhost URL.
+- `Debt.Aspire` orchestrates resources and service references, and runtime endpoints are resolved automatically.
+- Actual network addresses are environment/runtime-resolved and can change between runs/environments without code changes.
+
+Note: direct external endpoint configuration is still used for third-party APIs (for example, Treasury Debt to the Penny) inside the MCP server.
+
 ## Run Tests
 
 ```bash
