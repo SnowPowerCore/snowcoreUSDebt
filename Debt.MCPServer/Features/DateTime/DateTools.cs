@@ -3,10 +3,7 @@ namespace Debt.MCPServer.Features.DateTime;
 [McpServerToolType]
 public class DateTools(IDateTimeService dateTime)
 {
-    private const string GetCurrentDateToolName = "get_current_date";
-    private const string GetCurrentDateToolDescription = "Returns today's date in UTC using format yyyy-MM-dd.";
-
-    [McpServerTool(Name = GetCurrentDateToolName), Description(GetCurrentDateToolDescription)]
+    [McpServerTool(Name = "get_current_date"), Description("Returns today's date in UTC using format yyyy-MM-dd.")]
     public async Task<string> GetCurrentDateToolAsync()
     {
         var currentDateTimeResult = await dateTime.GetCurrentDateTimeAsync();
