@@ -100,6 +100,7 @@ The repository was established on the following environment:
 
 - OS: `Windows 11 24H2, Build 26100.7840`
 - Runtime target: `net10.0`
+- IDE: Visual Studio Code `1.109.5`
 - Container runtime used during development: Podman `1.23.1`
 
 If you test on another environment, please update this section with your validated setup.
