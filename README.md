@@ -19,6 +19,9 @@ The design target is:
 - Out-of-scope questions should return a clear boundary response (for example: _"I don’t have expertise in that area."_).
 - Missing/unsupported periods must be handled explicitly (for example: _"I don’t have data for that period."_).
 
+## Demo
+https://github.com/user-attachments/assets/67050343-54c6-4524-88ce-72779f0636ea
+
 ## Solution Structure
 
 - `Debt.ConsoleClient/` — Console chat application (LLM interaction and session flow).
